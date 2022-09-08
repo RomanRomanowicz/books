@@ -14,8 +14,8 @@ class Book(models.Model):
     title = models.TextField()
     author = models.ManyToManyField(Author)
     year = models.IntegerField()
-    pic = models.FileField(upload_to='book_pics/%Y/%m/')
-    ebook = models.FileField(upload_to='ebook/%Y/')
+    pic = models.FileField(upload_to='book_pics/%Y/%m/', null=True)
+    ebook = models.FileField(upload_to='ebook/%Y/', null=True)
 
     def __str__(self):
         return self.title
